@@ -38,38 +38,47 @@ Func thinhan()
 		EndIf
 	WEnd
 
-	Local $x=0, $y=0
-	Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_Done_Button_1.PNG',1,$x,$y,0)
-	If $search = 1 Then
-		MouseClick('main', $x, $y)
-	Else
-		; Bam button Thinh an
-		While 1
-			Local $x=0, $y=0
-			Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_Button.PNG',1,$x,$y,0)
-			If $search=1 Then
-				MouseClick('main', $x, $y)
-				ExitLoop
-			EndIf
-		WEnd
-		While 1
-			Local $x=0, $y=0
-			Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_done.PNG',1,$x,$y,0)
-			If $search=1 Then
-				MouseClick('main', $x, $y)
-				ExitLoop
-			EndIf
-		WEnd
-		; Bam button Thinh an Done
-		While 1
-			Local $x=0, $y=0
-			Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_Done_Button_1.PNG',1,$x,$y,0)
-			If $search=1 Then
-				MouseClick('main', $x, $y)
-				ExitLoop
-			EndIf
-		WEnd
-	EndIf
+	While 1
+		Local $x=0, $y=0
+		Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_Done_Button_1.PNG',1,$x,$y,0)
+		If $search = 1 Then
+			ExitLoop
+		Else
+			; Bam button Thinh an
+			While 1
+				Local $x=0, $y=0
+				Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_Button.PNG',1,$x,$y,0)
+				If $search=1 Then
+					MouseClick('main', $x, $y)
+					ExitLoop
+				EndIf
+			WEnd
+			While 1
+				Local $x=0, $y=0
+				Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_done.PNG',1,$x,$y,0)
+				If $search=1 Then
+					MouseClick('main', $x, $y)
+					ExitLoop
+				EndIf
+			WEnd
+			While 1
+				Local $x=0, $y=0
+				Local $search= _ImageSearch(@ScriptDir&'\img\2\tieu_dao_vuong_phu_done.PNG',1,$x,$y,0)
+				If $search=1 Then
+					ExitLoop
+				EndIf
+			WEnd
+			; Bam button Thinh an Done
+			While 1
+				Local $x=0, $y=0
+				Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_Done_Button_1.PNG',1,$x,$y,0)
+				If $search=1 Then
+					MouseClick('main', $x, $y)
+					ExitLoop 2
+				EndIf
+			WEnd
+		EndIf
+	WEnd
 
 	; Bam button Thoat phu Tieu dao Vuong
 	While 1
