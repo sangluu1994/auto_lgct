@@ -1,14 +1,5 @@
 Func thuhoach()
 
-	; Ve phu
-	While 1
-		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\6\vephu.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
-			MouseClick('main', $x, $y)
-			ExitLoop
-		EndIf
-	WEnd
 	; Bam vao Hoa an
 	While 1
 		Local $x = 0, $y = 0
@@ -137,9 +128,10 @@ Func thuhoach()
 			WEnd
 		EndIf
 	WEnd
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-Return
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+EndFunc
+
+Func nhanquaNhiemvu()
 	; Bam vao Nhiem vu
 	While 1
 		Local $x = 0, $y = 0
@@ -218,5 +210,100 @@ Return
 			ExitLoop
 		EndIf
 	WEnd
+EndFunc
 
+Func thuhoachCloneChinh()
+	While 1
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\diemdanh_Button.PNG', 1, $x, $y, 0)
+		If $search = 1 Then
+			MouseClick('main', $x, $y - 110)
+			ExitLoop
+		EndIf
+	WEnd
+	While 1
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\thunhanhCloneChinh_ok.PNG', 1, $x, $y, 0)
+		If $search = 1 Then
+			MouseClick('main', $x, $y)
+			ExitLoop
+		EndIf
+	WEnd
+	While 1
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\thunhanhCloneChinh_ok.PNG', 1, $x, $y, 0)
+		If $search = 1 Then
+			ExitLoop
+		EndIf
+	WEnd
+	While 1
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\xulingay.PNG', 1, $x, $y, 0)
+		If $search = 1 Then
+			MouseClick('main', $x, $y)
+			ExitLoop
+		EndIf
+	WEnd
+	While 1
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\xulingay_Done.PNG', 1, $x, $y, 0)
+		If $search = 1 Then
+			MouseClick('main', $x, $y)
+			ExitLoop
+		EndIf
+	WEnd
+	While 1
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\thunhanhCloneChinh_ok.PNG', 1, $x, $y, 0)
+		If $search = 1 Then
+			ExitLoop
+		EndIf
+	WEnd
+	While 1
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\xulingay_Close.PNG', 1, $x, $y, 0)
+		If $search = 1 Then
+			MouseClick('main', $x, $y)
+			ExitLoop
+		EndIf
+	WEnd
+EndFunc
+
+Func thuhoachCloneChanhNgu()
+	; Bam vao Hoa an
+	While 1
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\hoaan.PNG', 1, $x, $y, 0)
+		If $search = 1 Then
+			MouseClick('main', $x, $y)
+			Sleep(1500)
+			ExitLoop
+		EndIf
+	WEnd
+	; Bam Thu nhanh
+	While 1
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\thunhanhChanhNgu.PNG', 1, $x, $y, 0)
+		If $search = 1 Then
+			MouseClick('main', $x, $y)
+			Sleep(1500)
+			ExitLoop
+		EndIf
+	WEnd
+	While 1
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\dong_hoaan_ready.PNG.PNG', 1, $x, $y, 0)
+		If $search = 1 Then
+			ExitLoop
+		EndIf
+	WEnd
+	; Dong Hoa an
+	While 1
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\dong_hoaan.PNG', 1, $x, $y, 0)
+		If $search = 1 Then
+			MouseClick('main', $x, $y)
+			ExitLoop
+		EndIf
+	WEnd
 EndFunc

@@ -1,5 +1,6 @@
-Func sungbai()
+Func sungbai($sungbaiPattern)
 
+	$loaiSungbai = $sungbaiPattern
 	; Sung bai 1
 	While 1
 		Local $x=0, $y=0
@@ -238,6 +239,17 @@ Func sungbai()
 		EndIf
 	WEnd
 
+	If ($loaiSungbai = "khonglaychinhtich") Then
+		While 1
+			Local $x=0, $y=0
+			Local $search= _ImageSearch(@ScriptDir&'\img\3\sungbai3_7.PNG',1,$x,$y,0)
+			If $search=1 Then
+				MouseClick('main', $x, $y)
+				ExitLoop
+			EndIf
+		WEnd
+		Return
+	EndIf
 
 	; Sung bai 4
 	While 1

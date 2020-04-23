@@ -14,7 +14,7 @@ Func boss12h()
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\8\hoang_cung.PNG',1,$x,$y,0)
 		If $search=1 Then
-			MouseClickDrag('main', $x, $y, 200, 0)
+			MouseClickDrag('main', $x, $y, $x - 200, $y)
 			MouseClick('main', $x + 99, $y - 69)
 			ExitLoop
 		EndIf
@@ -32,34 +32,33 @@ Func boss12h()
 
 	; Khai chien
 	While 1
-		Local $x=0, $y=0
-		Local $search= _ImageSearch(@ScriptDir&'\img\8\khai_chien.PNG',1,$x,$y,0)
-		If $search=1 Then
-			MouseClick('main', $x, $y)
-			ExitLoop
-		EndIf
+		While 1
+			Local $x=0, $y=0
+			Local $search= _ImageSearch(@ScriptDir&'\img\8\khai_chien.PNG',1,$x,$y,0)
+			If $search=1 Then
+				MouseClick('main', $x, $y)
+				ExitLoop
+			EndIf
+			Local $x=0, $y=0
+			Local $search= _ImageSearch(@ScriptDir&'\img\8\hetgiano.PNG',1,$x,$y,0)
+			If $search=1 Then
+				Return
+			EndIf
+		WEnd
+		While 1
+			Local $x=0, $y=0
+			Local $search= _ImageSearch(@ScriptDir&'\img\8\thu_bac.PNG',1,$x,$y,0)
+			If $search=1 Then
+				MouseClick('main', $x, $y)
+				ExitLoop
+			EndIf
+			Local $x=0, $y=0
+			Local $search= _ImageSearch(@ScriptDir&'\img\8\kodudame.PNG',1,$x,$y,0)
+			If $search=1 Then
+				MouseClick('main', $x, $y)
+				ExitLoop
+			EndIf
+		WEnd
 	WEnd
-	While 1
-		Local $x=0, $y=0
-		Local $search= _ImageSearch(@ScriptDir&'\img\8\thu_bac.PNG',1,$x,$y,0)
-		If $search=1 Then
-			MouseClick('main', $x, $y)
-			ExitLoop
-		EndIf
-	WEnd
-
-
-	;;; dang tao do dang
-
-	; Thoat ra
-	While 1
-		Local $x=0, $y=0
-		Local $search= _ImageSearch(@ScriptDir&'\img\8\thoat_ra.PNG',1,$x,$y,0)
-		If $search=1 Then
-			MouseClick('main', $x, $y)
-			ExitLoop
-		EndIf
-	WEnd
-
 
 EndFunc

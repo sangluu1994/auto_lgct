@@ -21,6 +21,12 @@ Func dangnhap($param1)
 			MouseClick('main', $x3, $y3)
 			ExitLoop
 		EndIf
+		Local $x4 = 0, $y4 = 0
+		Local $search4 = _ImageSearch(@ScriptDir&'\img\1\mat_ketnoi2.PNG', 1, $x4, $y4, 0)
+		If $search4 = 1 Then
+			MouseClick('main', $x4, $y4)
+			ExitLoop
+		EndIf
 	WEnd
 	While 1
 		Local $x = 0, $y = 0
@@ -96,4 +102,23 @@ Func dangnhap($param1)
 		EndIf
 	WEnd
 
+EndFunc
+
+Func thoatgame()
+	While 1
+		Local $x=0, $y=0
+		Local $search= _ImageSearch(@ScriptDir&'\img\3\thoat_game.PNG',1,$x,$y,0)
+		If $search=1 Then
+			MouseClick('main', $x, $y)
+			ExitLoop
+		EndIf
+	WEnd
+	While 1
+		Local $x=0, $y=0
+		Local $search= _ImageSearch(@ScriptDir&'\img\3\xac_nhan.PNG',1,$x,$y,0)
+		If $search=1 Then
+			MouseClick('main', $x, $y)
+			ExitLoop
+		EndIf
+	WEnd
 EndFunc

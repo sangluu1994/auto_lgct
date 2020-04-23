@@ -2,12 +2,16 @@
 #include<f1_dangnhap.au3>
 #include<f8_boss12h.au3>
 #include <MsgBoxConstants.au3>
+#include <WinAPI.au3>
+#include <Windowsconstants.au3>
+#include <WinAPIFiles.au3>
+#include <File.au3>
 
 ; Press Esc to terminate script, Pause/Break to "pause"
 
 Global $g_bPaused = False
 
-HotKeySet("{PAUSE}", "TogglePause")
+HotKeySet("{F3}", "TogglePause")
 HotKeySet("{ESC}", "Terminate")
 HotKeySet("+!d", "ShowMessage") ; Shift-Alt-d
 
@@ -28,8 +32,43 @@ Func ShowMessage()
     MsgBox($MB_SYSTEMMODAL, "", "This is a message.")
 EndFunc   ;==>ShowMessage
 
+Local $iFileExists = FileExists(@ScriptDir&'\logBoss12h.txt')
+
+If $iFileExists Then
+	FileDelete(@ScriptDir&'\logBoss12h.txt')
+EndIf
+_FileCreate (@ScriptDir&'\logBoss12h.txt')
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-$accList = "sangluu001fix2"
-; Dang nhap
-;dangnhap($accList)
-boss12h()
+;~ thinhan()
+;~ sungbai()
+;~ phattu()
+;~ diemdanhhangngay()
+;~ thuhoach()
+;~ Exit
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+Local $accCloneChinhList[31] = ["athursitinhkiem","dzunghdm1","dzunghdm2","kieplangdu123","hongdoban","bin0game","bin1game","mr_yakolam","Hue bamby","phamphuong4","haingan2017","ngaynangdep","cuongden1986","vinhtd","Phidiepthainguyen","csbuow","cs2buow","anhphu123456789","sangluu001fix2","sangluu002fix2","sangluu003fix3","kieplangdu1","kieplangdu2","kieplangdu3","kieplangdu4","kieplangdu5","kieplangdu6","kieplangdu7","kieplangdu8","kieplangdu9","kieplangdu10"]
+Local $accCloneChanhNguList[5] = ["sangluu004fix3","sangluu005fix2","luusang005fix1","luusang007fix1","cubinngoan0824"]
+
+$i1 = InputBox("Xac nhan", "Bat dau chay tu clone Chinh thu may?", "0", "", - 1, -1, 0, 0)
+$i2 = InputBox("Xac nhan", "Bat dau chay tu clone Chanh Ngu thu may?", "0", "", - 1, -1, 0, 0)
+
+$accCloneChinhListLength = Ubound($accCloneChinhList)
+$accCloneChanhNguListLength = Ubound($accCloneChanhNguList)
+
+; Danh boss tai acc Clone Chinh
+While ($i1 < $accCloneChinhListLength)
+	dangnhap($accCloneChinhList[$i1])
+	boss12h()
+	FileWrite(@ScriptDir&'\logBoss12h.txt',"|*"&$i1)
+	$i1 = $i1 + 1
+	thoatgame()
+WEnd
+
+; Danh boss tai acc Clone Chanh Ngu Pham
+While ($i2 < $accCloneChanhNguListLength)
+	dangnhap($accCloneChanhNguList[$i2])
+	boss12h()
+	FileWrite(@ScriptDir&'\logBoss12h.txt',"|**"&$i2)
+	$i2 = $i2 + 1
+	thoatgame()
+WEnd
