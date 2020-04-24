@@ -1,7 +1,7 @@
 Func phattu()
 
 	; Check ngay phat tu
-	Local $defaultDay = 116
+	Local $defaultDay = 114
 	Local $currentDay = getCurrentDay()
 	If (Mod($currentDay - $defaultDay, 2) <> 0) Then
 		Return
