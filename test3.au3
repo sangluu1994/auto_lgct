@@ -1,6 +1,6 @@
 #include <MsgBoxConstants.au3>
 
-Example()
+Example2()
 
 Func Example()
     ; Retrieve the position as well as height and width of the active window.
@@ -14,5 +14,6 @@ Func Example()
 EndFunc   ;==>Example
 
 Func Example2()
+	;WinMove("NoxPlayer", "", Default, Default, 548, Default)
 	WinMove("NoxPlayer", "", Default, Default, 558, 1020)
 EndFunc
