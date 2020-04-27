@@ -1,6 +1,4 @@
-Global $x_main = 0, $y_main = 0
-getMainPos($x_main, $y_main)
-Func dangnhap($param1)
+Func dangnhap($param1, $x_main, $y_main)
 
 	Local $account = $param1
 
@@ -69,6 +67,9 @@ Func dangnhap($param1)
 
 	; Bam vao o dang nhap
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\1\box_dang_nhap.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -83,6 +84,9 @@ Func dangnhap($param1)
 
 	; Bam vao o dang nhap sau khi nhap acc
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\1\dang_nhap_vao_game_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -93,6 +97,9 @@ Func dangnhap($param1)
 
 	; Bam "Vao Game"
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\1\vao_game_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -104,6 +111,9 @@ Func dangnhap($param1)
 	; Tat quang cao
 	Sleep(1000)
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\1\tat_quang_cao_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
