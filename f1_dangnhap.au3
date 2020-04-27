@@ -1,3 +1,5 @@
+Global $x_main = 0, $y_main = 0
+getMainPos($x_main, $y_main)
 Func dangnhap($param1)
 
 	Local $account = $param1
@@ -29,6 +31,9 @@ Func dangnhap($param1)
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x = 0, $y = 0
 		Local $search = _ImageSearch(@ScriptDir&'\img\1\hinh_nen.PNG', 1, $x, $y, 0)
 		If $search = 1 Then
@@ -38,6 +43,9 @@ Func dangnhap($param1)
 
 	; Doi tai khoan
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\1\doi_tai_khoan_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -48,6 +56,9 @@ Func dangnhap($param1)
 
 	; Vào muc dang nhap
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\1\dang_nhap_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -101,7 +112,7 @@ Func dangnhap($param1)
 			ExitLoop
 		EndIf
 	WEnd
-
+	Return True
 EndFunc
 
 Func thoatgame()

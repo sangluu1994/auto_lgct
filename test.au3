@@ -33,13 +33,14 @@ $account = "sangluu002fix2"
 ; Vào phần đăng nhập
 While 1
 	Local $x=0, $y=0
-	Local $search= _ImageSearch(@ScriptDir&'\img\diemdanh\doi_tai_khoan_Button.PNG',1,$x,$y,0)
+	Local $search= _ImageSearch(@ScriptDir&'\img\phuluc_1\manhinhchinh.PNG',1,$x,$y,0)
 	If $search=1 Then
 		MouseClick('main', $x, $y)
+		MsgBox(0,0,$x&' '&$y)
 		ExitLoop
 	EndIf
 WEnd
-
+Exit
 ; Vào mục đăng nhập
 While 1
 	Local $x=0, $y=0
