@@ -292,7 +292,7 @@ Func thuhoachCloneChanhNgu()
 	WEnd
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\6\dong_hoaan_ready.PNG.PNG', 1, $x, $y, 0)
+		Local $search = _ImageSearch(@ScriptDir&'\img\6\dong_hoaan_ready.PNG', 1, $x, $y, 0)
 		If $search = 1 Then
 			ExitLoop
 		EndIf
