@@ -5,9 +5,10 @@ Func dangnhap($param1, $x_main, $y_main)
 	; Vao phan dang nhap
 	While 1
 		Local $x1 = 0, $y1 = 0
-		Local $search1 = _ImageSearch(@ScriptDir&'\img\1\ava_game.PNG', 1, $x1, $y1, 0)
+		Local $search1 = _ImageSearch(@ScriptDir&'\img\1\avagame.PNG', 1, $x1, $y1, 0)
 		If $search1 = 1 Then
 			MouseClick('main', $x1, $y1)
+			Sleep(5000)
 			ExitLoop
 		EndIf
 		Local $x2 = 0, $y2 = 0
@@ -15,17 +16,8 @@ Func dangnhap($param1, $x_main, $y_main)
 		If $search2 = 1 Then
 			ExitLoop
 		EndIf
-		Local $x3 = 0, $y3 = 0
-		Local $search3 = _ImageSearch(@ScriptDir&'\img\1\mat_ketnoi.PNG', 1, $x3, $y3, 0)
-		If $search3 = 1 Then
-			MouseClick('main', $x3, $y3)
-			ExitLoop
-		EndIf
-		Local $x4 = 0, $y4 = 0
-		Local $search4 = _ImageSearch(@ScriptDir&'\img\1\mat_ketnoi2.PNG', 1, $x4, $y4, 0)
-		If $search4 = 1 Then
-			MouseClick('main', $x4, $y4)
-			ExitLoop
+		If checkError($x_main, $y_main) = True Then
+			Return False
 		EndIf
 	WEnd
 	While 1
@@ -139,6 +131,18 @@ Func thoatgame()
 		Local $search= _ImageSearch(@ScriptDir&'\img\3\xac_nhan.PNG',1,$x,$y,0)
 		If $search=1 Then
 			MouseClick('main', $x, $y)
+			ExitLoop
+		EndIf
+	WEnd
+EndFunc
+
+Func resetGame()
+	While 1
+		Local $x=0, $y=0
+		Local $search= _ImageSearch(@ScriptDir&'\img\1\reset_game.PNG',1,$x,$y,0)
+		If $search=1 Then
+			MouseClick('main', $x, $y)
+			Sleep(8000)
 			ExitLoop
 		EndIf
 	WEnd

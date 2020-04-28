@@ -31,6 +31,10 @@ Func _ImageSearch($findImage,$resultPosition, ByRef $x, ByRef $y,$tolerance, $HB
    return _ImageSearchArea($findImage,$resultPosition,0,0,@DesktopWidth,@DesktopHeight,$x,$y,$tolerance,$HBMP)
 EndFunc
 
+Func _ImageSearchArea_($findImage,$resultPosition, $x_main, $y_main, $x_mainRight, $y_mainBottom, ByRef $x, ByRef $y,$tolerance, $HBMP=0)
+   return _ImageSearchArea($findImage,$resultPosition,0,0,@DesktopWidth,@DesktopHeight,$x,$y,$tolerance,$HBMP)
+EndFunc
+
 Func _ImageSearchArea($findImage,$resultPosition,$x1,$y1,$right,$bottom, ByRef $x, ByRef $y, $tolerance,$HBMP=0)
 	;MsgBox(0,"asd","" & $x1 & " " & $y1 & " " & $right & " " & $bottom)
 	if $tolerance>0 then $findImage = "*" & $tolerance & " " & $findImage

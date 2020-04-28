@@ -1,7 +1,10 @@
-Func diemdanhhangngay()
+Func diemdanhhangngay($x_main, $y_main)
 
 	; Vao Diem danh hang ngay
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x = 0, $y = 0
 		Local $search = _ImageSearch(@ScriptDir&'\img\15\diemdanhhangngay.PNG', 1, $x, $y, 0)
 		If $search = 1 Then
@@ -15,6 +18,9 @@ Func diemdanhhangngay()
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x = 0, $y = 0
 		Local $search = _ImageSearch(@ScriptDir&'\img\15\kymoingay.PNG', 1, $x, $y, 0)
 		If $search = 1 Then
@@ -36,11 +42,17 @@ Func diemdanhhangngay()
 	MouseClick('main', $x + 369, $y + 646)
 	Sleep(2000)
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x = 0, $y = 0
 		Local $search = _ImageSearch(@ScriptDir&'\img\15\kymoingay_done.PNG', 1, $x, $y, 0)
 		If $search = 1 Then
 			MouseClick('main', $x, $y)
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x10 = 0, $y10 = 0
 				Local $search10 = _ImageSearch(@ScriptDir&'\img\15\thoat_diemdanh.PNG', 1, $x10, $y10, 0)
 				If $search10 = 1 Then
@@ -50,5 +62,5 @@ Func diemdanhhangngay()
 			WEnd
 		EndIf
 	WEnd
-
+	Return True
 EndFunc

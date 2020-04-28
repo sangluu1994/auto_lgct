@@ -1,6 +1,9 @@
-Func boss12h()
+Func boss12h($x_main, $y_main)
 	; Tu giao dien chinh, thoat ra giao dien lon
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\8\xuat_phu.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -11,6 +14,9 @@ Func boss12h()
 
 	; Tu hoang cung, keo den chien truong
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\8\hoang_cung.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -22,6 +28,9 @@ Func boss12h()
 
 	; Vao chien truong
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\8\vao_chien_truong.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -33,6 +42,9 @@ Func boss12h()
 	; Khai chien
 	While 1
 		While 1
+			If checkError($x_main, $y_main) = True Then
+				Return False
+			EndIf
 			Local $x=0, $y=0
 			Local $search= _ImageSearch(@ScriptDir&'\img\8\khai_chien.PNG',1,$x,$y,0)
 			If $search=1 Then
@@ -46,6 +58,9 @@ Func boss12h()
 			EndIf
 		WEnd
 		While 1
+			If checkError($x_main, $y_main) = True Then
+				Return False
+			EndIf
 			Local $x=0, $y=0
 			Local $search= _ImageSearch(@ScriptDir&'\img\8\thu_bac.PNG',1,$x,$y,0)
 			If $search=1 Then
@@ -60,5 +75,5 @@ Func boss12h()
 			EndIf
 		WEnd
 	WEnd
-
+	Return True
 EndFunc

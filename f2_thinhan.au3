@@ -1,7 +1,10 @@
-Func thinhan()
+Func thinhan($x_main, $y_main)
 
 	; Xuat phu
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\2\xuat_phu_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -12,6 +15,9 @@ Func thinhan()
 
 	; Vao Hoang cung
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\2\hoang_cung_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -22,6 +28,9 @@ Func thinhan()
 
 	; Vao Tieu dao Vuong phu
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\2\tieu_dao_vuong_phu_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -31,6 +40,9 @@ Func thinhan()
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\2\tieu_dao_vuong_phu_done.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -39,6 +51,9 @@ Func thinhan()
 	WEnd
 
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_Done_Button_1.PNG',1,$x,$y,0)
 		If $search = 1 Then
@@ -46,6 +61,9 @@ Func thinhan()
 		Else
 			; Bam button Thinh an
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x=0, $y=0
 				Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_Button.PNG',1,$x,$y,0)
 				If $search=1 Then
@@ -54,6 +72,9 @@ Func thinhan()
 				EndIf
 			WEnd
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x=0, $y=0
 				Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_done.PNG',1,$x,$y,0)
 				If $search=1 Then
@@ -62,6 +83,9 @@ Func thinhan()
 				EndIf
 			WEnd
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x=0, $y=0
 				Local $search= _ImageSearch(@ScriptDir&'\img\2\tieu_dao_vuong_phu_done.PNG',1,$x,$y,0)
 				If $search=1 Then
@@ -70,6 +94,9 @@ Func thinhan()
 			WEnd
 			; Bam button Thinh an Done
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x=0, $y=0
 				Local $search= _ImageSearch(@ScriptDir&'\img\2\thinh_an_Done_Button_1.PNG',1,$x,$y,0)
 				If $search=1 Then
@@ -82,6 +109,9 @@ Func thinhan()
 
 	; Bam button Thoat phu Tieu dao Vuong
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\2\thoat_Tieu_dao_Vuong_phu_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -92,6 +122,9 @@ Func thinhan()
 
 	; Thoat Hoang cung
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\2\thoat_Tieu_dao_Vuong_phu_done.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -99,6 +132,9 @@ Func thinhan()
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\2\thoat_Hoang_cung_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -106,4 +142,5 @@ Func thinhan()
 			ExitLoop
 		EndIf
 	WEnd
+	Return True
 EndFunc

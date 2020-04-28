@@ -1,4 +1,4 @@
-Func phattu()
+Func phattu($x_main, $y_main)
 
 	; Check ngay phat tu
 	Local $defaultDay = 114
@@ -9,6 +9,9 @@ Func phattu()
 
 	; Vao Nha lao
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\hoang_cung_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -21,14 +24,20 @@ Func phattu()
 
 	; Pham nhan 1
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x12 = 0, $y12 = 0
 		Local $search12 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh3.PNG', 1, $x12, $y12, 0)
 		If $search12 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -42,17 +51,22 @@ Func phattu()
 		Local $search1 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh.PNG', 1, $x1, $y1, 0)
 		If $search1 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
-					ExitLoop
+					Return True
 				EndIf
 			WEnd
 		EndIf
 	WEnd
 	; Bam phat nhanh
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phatnhanh.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -61,6 +75,9 @@ Func phattu()
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phatnhanh_ok.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -68,6 +85,9 @@ Func phattu()
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan1_2.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -79,6 +99,9 @@ Func phattu()
 
 	; Pham nhan 2
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan2_11.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -87,6 +110,9 @@ Func phattu()
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan2_2.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -98,6 +124,10 @@ Func phattu()
 
 	; Pham nhan 3
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
+
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan3_11.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -106,6 +136,9 @@ Func phattu()
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan3_2.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -117,6 +150,9 @@ Func phattu()
 
 	; Pham nhan 4
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan4_11.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -127,10 +163,13 @@ Func phattu()
 		Local $search12 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh3.PNG', 1, $x12, $y12, 0)
 		If $search12 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -138,10 +177,13 @@ Func phattu()
 		Local $search1 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh.PNG', 1, $x1, $y1, 0)
 		If $search1 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -150,15 +192,21 @@ Func phattu()
 		If $search11 = 1 Then
 			MouseClick('main', $x11, $y11)
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan4_2.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -170,14 +218,20 @@ Func phattu()
 
 	; Pham nhan 5
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x12 = 0, $y12 = 0
 		Local $search12 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh3.PNG', 1, $x12, $y12, 0)
 		If $search12 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -191,10 +245,13 @@ Func phattu()
 		Local $search1 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh.PNG', 1, $x1, $y1, 0)
 		If $search1 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -203,15 +260,21 @@ Func phattu()
 		If $search11 = 1 Then
 			MouseClick('main', $x11, $y11)
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan5_2.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -223,14 +286,20 @@ Func phattu()
 
 	; Pham nhan 6
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x12 = 0, $y12 = 0
 		Local $search12 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh3.PNG', 1, $x12, $y12, 0)
 		If $search12 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -244,10 +313,13 @@ Func phattu()
 		Local $search1 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh.PNG', 1, $x1, $y1, 0)
 		If $search1 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -256,15 +328,21 @@ Func phattu()
 		If $search11 = 1 Then
 			MouseClick('main', $x11, $y11)
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan6_2.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -276,14 +354,20 @@ Func phattu()
 
 	; Pham nhan 7
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x12 = 0, $y12 = 0
 		Local $search12 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh3.PNG', 1, $x12, $y12, 0)
 		If $search12 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -297,10 +381,13 @@ Func phattu()
 		Local $search1 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh.PNG', 1, $x1, $y1, 0)
 		If $search1 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -309,15 +396,21 @@ Func phattu()
 		If $search11 = 1 Then
 			MouseClick('main', $x11, $y11)
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan7_2.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -329,14 +422,20 @@ Func phattu()
 
 	; Pham nhan 8
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x12 = 0, $y12 = 0
 		Local $search12 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh3.PNG', 1, $x12, $y12, 0)
 		If $search12 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -350,10 +449,13 @@ Func phattu()
 		Local $search1 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh.PNG', 1, $x1, $y1, 0)
 		If $search1 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -362,15 +464,21 @@ Func phattu()
 		If $search11 = 1 Then
 			MouseClick('main', $x11, $y11)
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan8_2.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -382,14 +490,20 @@ Func phattu()
 
 	; Pham nhan 9
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x12 = 0, $y12 = 0
 		Local $search12 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh3.PNG', 1, $x12, $y12, 0)
 		If $search12 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -403,10 +517,13 @@ Func phattu()
 		Local $search1 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh.PNG', 1, $x1, $y1, 0)
 		If $search1 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -415,15 +532,21 @@ Func phattu()
 		If $search11 = 1 Then
 			MouseClick('main', $x11, $y11)
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan9_2.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -435,14 +558,20 @@ Func phattu()
 
 	; Pham nhan 10
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x12 = 0, $y12 = 0
 		Local $search12 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh3.PNG', 1, $x12, $y12, 0)
 		If $search12 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -456,10 +585,13 @@ Func phattu()
 		Local $search1 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh.PNG', 1, $x1, $y1, 0)
 		If $search1 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -468,15 +600,21 @@ Func phattu()
 		If $search11 = 1 Then
 			MouseClick('main', $x11, $y11)
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\5\phamnhan10_2.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -486,14 +624,20 @@ Func phattu()
 	WEnd
 	Sleep(2000)
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x1 = 0, $y1 = 0
 		Local $search1 = _ImageSearch(@ScriptDir&'\img\5\het_uydanh.PNG', 1, $x1, $y1, 0)
 		If $search1 = 1 Then
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
@@ -502,15 +646,18 @@ Func phattu()
 		If $search11 = 1 Then
 			MouseClick('main', $x11, $y11)
 			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
 				Local $x2 = 0, $y2 = 0
 				Local $search2 = _ImageSearch(@ScriptDir&'\img\5\thoat_nhatu.PNG', 1, $x2, $y2, 0)
 				If $search2 = 1 Then
-					Return
+					Return True
 				EndIf
 			WEnd
 		EndIf
 	WEnd
-
+	Return True
 EndFunc
 
 Func getCurrentDay()

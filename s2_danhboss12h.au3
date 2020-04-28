@@ -1,4 +1,5 @@
 #include<ImageSearch.au3>
+#include<f0_getInfo.au3>
 #include<f1_dangnhap.au3>
 #include<f8_boss12h.au3>
 #include <MsgBoxConstants.au3>
@@ -46,6 +47,9 @@ _FileCreate (@ScriptDir&'\logBoss12h.txt')
 ;~ thuhoach()
 ;~ Exit
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+WinMove("NoxPlayer", "", Default, Default, 558, 1020)
+Global $x_main = 0, $y_main = 0
+getMainPos($x_main, $y_main)
 Local $accCloneChinhList[31] = ["athursitinhkiem","dzunghdm1","dzunghdm2","kieplangdu123","hongdoban","bin0game","bin1game","mr_yakolam","Hue bamby","phamphuong4","haingan2017","ngaynangdep","cuongden1986","vinhtd","Phidiepthainguyen","csbuow","cs2buow","anhphu123456789","sangluu001fix2","sangluu002fix2","sangluu003fix3","kieplangdu1","kieplangdu2","kieplangdu3","kieplangdu4","kieplangdu5","kieplangdu6","kieplangdu7","kieplangdu8","kieplangdu9","kieplangdu10"]
 Local $accCloneChanhNguList[7] = ["sangluu004fix3","sangluu005fix2","luusang005fix1","luusang007fix1","cubinngoan0824","luusang006fix1","luusang012fix2"]
 
@@ -57,8 +61,16 @@ $accCloneChanhNguListLength = Ubound($accCloneChanhNguList)
 
 ; Danh boss tai acc Clone Chinh
 While ($i1 < $accCloneChinhListLength)
-	dangnhap($accCloneChinhList[$i1])
-	boss12h()
+	Local $dangnhap = dangnhap($accCloneChinhList[$i1], $x_main, $y_main)
+	If $dangnhap == False Then
+		resetGame()
+		ContinueLoop
+	EndIf
+	Local $boss12h = boss12h($x_main, $y_main)
+	If $boss12h == False Then
+		resetGame()
+		ContinueLoop
+	EndIf
 	FileWrite(@ScriptDir&'\logBoss12h.txt',"|*"&$i1)
 	$i1 = $i1 + 1
 	thoatgame()
@@ -66,8 +78,16 @@ WEnd
 
 ; Danh boss tai acc Clone Chanh Ngu Pham
 While ($i2 < $accCloneChanhNguListLength)
-	dangnhap($accCloneChanhNguList[$i2])
-	boss12h()
+	Local $dangnhap = dangnhap($accCloneChanhNguList[$i2], $x_main, $y_main)
+	If $dangnhap == False Then
+		resetGame()
+		ContinueLoop
+	EndIf
+	Local $boss12h = boss12h($x_main, $y_main)
+	If $boss12h == False Then
+		resetGame()
+		ContinueLoop
+	EndIf
 	FileWrite(@ScriptDir&'\logBoss12h.txt',"|**"&$i2)
 	$i2 = $i2 + 1
 	thoatgame()

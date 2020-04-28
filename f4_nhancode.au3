@@ -1,7 +1,10 @@
-Func nhancode($codeTuan)
+Func nhancode($codeTuan, $x_main, $y_main)
 	Local $code = $codeTuan
 	; Xuat phu
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\4\xuat_phu_Button.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -11,6 +14,9 @@ Func nhancode($codeTuan)
 	WEnd
 	; Vao thiet lap
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\4\thietlap.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -20,6 +26,9 @@ Func nhancode($codeTuan)
 	WEnd
 	; Doi code
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\4\doicode.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -29,6 +38,9 @@ Func nhancode($codeTuan)
 	WEnd
 	; Nhap code
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\4\nhapcode.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -39,6 +51,9 @@ Func nhancode($codeTuan)
 	Send($code)
 	Sleep(1000)
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\4\bam_nhapcode.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -49,6 +64,9 @@ Func nhancode($codeTuan)
 	WEnd
 	; Nhap code done
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\4\nhapcode_done.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -56,6 +74,9 @@ Func nhancode($codeTuan)
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\4\thoat_nhapcode.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -64,6 +85,9 @@ Func nhancode($codeTuan)
 		EndIf
 	WEnd
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x=0, $y=0
 		Local $search= _ImageSearch(@ScriptDir&'\img\4\thoat_thietlap.PNG',1,$x,$y,0)
 		If $search=1 Then
@@ -71,9 +95,12 @@ Func nhancode($codeTuan)
 			ExitLoop
 		EndIf
 	WEnd
-	Return
+	Return True
 	; Nhan mail
 	While 1
+		If checkError($x_main, $y_main) = True Then
+			Return False
+		EndIf
 		Local $x10 = 0, $y10 = 0
 		Local $search10 = _ImageSearch(@ScriptDir&'\img\4\email_have.PNG', 1, $x10, $y10, 0)
 		If $search10 = 1 Then

@@ -20,7 +20,7 @@ Func checkError($x_main, $y_main)
 		$errorResult = True
 	EndIf
 	; 217, 630 348, 669
-	$search = _ImageSearchArea(@ScriptDir&'\img\0\disconnectgame.PNG', 1, $x_mainPos, $y_mainPos, 131, 39, $x, $y, 0)
+	$search = _ImageSearchArea_(@ScriptDir&'\img\0\disconnectgame.PNG', 1, $x_mainPos, $y_mainPos, 131, 39, $x, $y, 0)
 	If $search = 1 Then
 		$errorResult = True
 	EndIf
