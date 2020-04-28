@@ -44,7 +44,7 @@ Func dangnhap($param1, $x_main, $y_main)
 		EndIf
 	WEnd
 
-	; Vào muc dang nhap
+	; Vao muc dang nhap
 	While 1
 		If checkError($x_main, $y_main) = True Then
 			Return False
