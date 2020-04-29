@@ -47,9 +47,12 @@ _FileCreate (@ScriptDir&'\logBoss12h.txt')
 ;~ thuhoach()
 ;~ Exit
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+WinActivate("NoxPlayer")
 WinMove("NoxPlayer", "", Default, Default, 558, 1020)
-Global $x_main = 0, $y_main = 0
-getMainPos($x_main, $y_main)
+Global $lgctPos = WinGetPos("NoxPlayer")
+Global $x_main = ($lgctPos[0] + $lgctPos[2] + 10) / 2
+Global $y_main = ($lgctPos[1] + 39 + $lgctPos[3]) / 2
+
 Local $accCloneChinhList[31] = ["athursitinhkiem","dzunghdm1","dzunghdm2","kieplangdu123","hongdoban","bin0game","bin1game","mr_yakolam","Hue bamby","phamphuong4","haingan2017","ngaynangdep","cuongden1986","vinhtd","Phidiepthainguyen","csbuow","cs2buow","anhphu123456789","sangluu001fix2","sangluu002fix2","sangluu003fix3","kieplangdu1","kieplangdu2","kieplangdu3","kieplangdu4","kieplangdu5","kieplangdu6","kieplangdu7","kieplangdu8","kieplangdu9","kieplangdu10"]
 Local $accCloneChanhNguList[7] = ["sangluu004fix3","sangluu005fix2","luusang005fix1","luusang007fix1","cubinngoan0824","luusang006fix1","luusang012fix2"]
 
