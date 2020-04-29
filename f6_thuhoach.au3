@@ -268,6 +268,7 @@ Func thuhoachCloneChinh($x_main, $y_main)
 		Local $search = _ImageSearch(@ScriptDir&'\img\6\xulingay.PNG', 1, $x, $y, 0)
 		If $search = 1 Then
 			MouseClick('main', $x, $y)
+			Sleep(2000)
 			ExitLoop
 		EndIf
 	WEnd
@@ -278,32 +279,32 @@ Func thuhoachCloneChinh($x_main, $y_main)
 		Local $x = 0, $y = 0
 		Local $search = _ImageSearch(@ScriptDir&'\img\6\thunhanhCloneChinh_ok2.PNG', 1, $x, $y, 0)
 		If $search = 1 Then
+			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
+				Local $x = 0, $y = 0
+				Local $search = _ImageSearch(@ScriptDir&'\img\6\xulingay_Done.PNG', 1, $x, $y, 0)
+				If $search = 1 Then
+					MouseClick('main', $x, $y)
+					ExitLoop
+				EndIf
+			WEnd
+			While 1
+				If checkError($x_main, $y_main) = True Then
+					Return False
+				EndIf
+				Local $x = 0, $y = 0
+				Local $search = _ImageSearch(@ScriptDir&'\img\6\thunhanhCloneChinh_ok.PNG', 1, $x, $y, 0)
+				If $search = 1 Then
+					ExitLoop
+				EndIf
+			WEnd
 			ExitLoop
 		EndIf
 		Local $x1 = 0, $y1 = 0
-		Local $search1 = _ImageSearch(@ScriptDir&'\img\6\thunhanhCloneChinh_ok.PNG', 1, $x1, $y1, 0)
+		Local $search1 = _ImageSearch(@ScriptDir&'\img\6\thunhanhCloneChinh_ok3.PNG', 1, $x1, $y1, 0)
 		If $search1 = 1 Then
-			ExitLoop
-		EndIf
-	WEnd
-	While 1
-		If checkError($x_main, $y_main) = True Then
-			Return False
-		EndIf
-		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\6\xulingay_Done.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
-			MouseClick('main', $x, $y)
-			ExitLoop
-		EndIf
-	WEnd
-	While 1
-		If checkError($x_main, $y_main) = True Then
-			Return False
-		EndIf
-		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\6\thunhanhCloneChinh_ok.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
 			ExitLoop
 		EndIf
 	WEnd
