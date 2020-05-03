@@ -1,4 +1,4 @@
-Func nhancode($codeTuan, $x_main, $y_main)
+Func nhancode($codeTuan, $x_main, $y_main, $lgctPos)
 	Local $code = $codeTuan
 	; Xuat phu
 	While 1
