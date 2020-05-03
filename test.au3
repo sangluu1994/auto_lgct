@@ -28,23 +28,13 @@ Func ShowMessage()
 EndFunc   ;==>ShowMessage
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-Global $x_main = 0, $y_main = 0
-getMainPos($x_main, $y_main)
-MsgBox(0, 0, 0)
+WinActivate("NoxPlayer")
 While 1
-	MouseMove($x_main, $y_main)
-	Sleep(2000)
-	Local $x_mainPos = $x_main - 65
-	Local $y_mainPos = $y_main + 95
-	MouseMove($x_mainPos, $y_mainPos)
-	Sleep(2000)
-	MouseMove($x_mainPos + 131, $y_mainPos + 39)
-	Sleep(2000)
-	;222, 630
 	Local $x = 0, $y = 0
-	Local $search = _ImageSearchArea_(@ScriptDir&'\img\0\disconnectgame.PNG', 1, 222, 630, 131, 39, $x, $y, 0)
+	; 479, 450 600, 590
+	Local $search = _ImageSearchArea_(@ScriptDir&'\img\phuluc_1\1.PNG', 1, 400, 400, 600, 600, $x, $y, 0)
 	If $search = 1 Then
-		MsgBox(0, 0, 1)
+		MsgBox(0, 0, $search)
 		ExitLoop
 	EndIf
 WEnd

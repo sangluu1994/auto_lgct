@@ -3,8 +3,8 @@ Func napbang($mathe, $pass)
 	; Vao option nap the
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\napcardOption.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\napcardOption.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
@@ -12,8 +12,8 @@ Func napbang($mathe, $pass)
 	; Vao option nap the
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\napcardOption1.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\napcardOption1.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
@@ -21,50 +21,50 @@ Func napbang($mathe, $pass)
 	; chonVung
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\chonVung.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\chonVung.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
 		Local $x1 = 0, $y1 = 0
-		Local $search1 = _ImageSearch(@ScriptDir&'\img\16\gatecardOption.PNG', 1, $x1, $y1, 0)
-		If $search1 = 1 Then
+		Local $search1 = _ImageSearchArea_(@ScriptDir&'\img\16\gatecardOption.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x1, $y1, 0)
+		If $search1 == 1 Then
 			ExitLoop
 		EndIf
 	WEnd
 	; vungVietNam
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\vungVietNam.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\vungVietNam.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
 		Local $x1 = 0, $y1 = 0
-		Local $search1 = _ImageSearch(@ScriptDir&'\img\16\gatecardOption.PNG', 1, $x1, $y1, 0)
-		If $search1 = 1 Then
+		Local $search1 = _ImageSearchArea_(@ScriptDir&'\img\16\gatecardOption.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x1, $y1, 0)
+		If $search1 == 1 Then
 			ExitLoop
 		EndIf
 	WEnd
 	; xacnhanVung
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\xacnhanVung.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\xacnhanVung.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
 		Local $x1 = 0, $y1 = 0
-		Local $search1 = _ImageSearch(@ScriptDir&'\img\16\gatecardOption.PNG', 1, $x1, $y1, 0)
-		If $search1 = 1 Then
+		Local $search1 = _ImageSearchArea_(@ScriptDir&'\img\16\gatecardOption.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x1, $y1, 0)
+		If $search1 == 1 Then
 			ExitLoop
 		EndIf
 	WEnd
 	; gatecardOption
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\gatecardOption.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\gatecardOption.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
@@ -72,8 +72,8 @@ Func napbang($mathe, $pass)
 	; nhapMathe
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\nhapMathe.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\nhapMathe.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			Sleep(1000)
 			Send($mathe)
@@ -84,8 +84,8 @@ Func napbang($mathe, $pass)
 	; nhapPass
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\nhapPass.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\nhapPass.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			Sleep(1000)
 			Send($pass)
@@ -96,8 +96,8 @@ Func napbang($mathe, $pass)
 	; xacnhanNap
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\xacnhanNap.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\xacnhanNap.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
@@ -105,16 +105,16 @@ Func napbang($mathe, $pass)
 	; napthanhcong
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\napthanhcong.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\napthanhcong.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			ExitLoop
 		EndIf
 	WEnd
 	; ketthucNap
 	While 1
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\ketthucNap.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\ketthucNap.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
@@ -129,15 +129,15 @@ Func dangnhapnapbang($param1, $x_main, $y_main)
 	; Vao phan dang nhap
 	While 1
 		Local $x1 = 0, $y1 = 0
-		Local $search1 = _ImageSearch(@ScriptDir&'\img\16\avagame.PNG', 1, $x1, $y1, 0)
-		If $search1 = 1 Then
+		Local $search1 = _ImageSearchArea_(@ScriptDir&'\img\16\avagame.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x1, $y1, 0)
+		If $search1 == 1 Then
 			MouseClick('main', $x1, $y1)
 			Sleep(5000)
 			ExitLoop
 		EndIf
 		Local $x2 = 0, $y2 = 0
-		Local $search2 = _ImageSearch(@ScriptDir&'\img\16\hinh_nen.PNG', 1, $x2, $y2, 0)
-		If $search2 = 1 Then
+		Local $search2 = _ImageSearchArea_(@ScriptDir&'\img\16\hinh_nen.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x2, $y2, 0)
+		If $search2 == 1 Then
 			ExitLoop
 		EndIf
 		If checkError($x_main, $y_main) = True Then
@@ -149,8 +149,8 @@ Func dangnhapnapbang($param1, $x_main, $y_main)
 			Return False
 		EndIf
 		Local $x = 0, $y = 0
-		Local $search = _ImageSearch(@ScriptDir&'\img\16\hinh_nen.PNG', 1, $x, $y, 0)
-		If $search = 1 Then
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\hinh_nen.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			ExitLoop
 		EndIf
 	WEnd
@@ -160,9 +160,9 @@ Func dangnhapnapbang($param1, $x_main, $y_main)
 		If checkError($x_main, $y_main) = True Then
 			Return False
 		EndIf
-		Local $x=0, $y=0
-		Local $search= _ImageSearch(@ScriptDir&'\img\16\doi_tai_khoan_Button.PNG',1,$x,$y,0)
-		If $search=1 Then
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\doi_tai_khoan_Button.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
@@ -173,9 +173,9 @@ Func dangnhapnapbang($param1, $x_main, $y_main)
 		If checkError($x_main, $y_main) = True Then
 			Return False
 		EndIf
-		Local $x=0, $y=0
-		Local $search= _ImageSearch(@ScriptDir&'\img\16\dang_nhap_Button.PNG',1,$x,$y,0)
-		If $search=1 Then
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\dang_nhap_Button.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
@@ -186,9 +186,9 @@ Func dangnhapnapbang($param1, $x_main, $y_main)
 		If checkError($x_main, $y_main) = True Then
 			Return False
 		EndIf
-		Local $x=0, $y=0
-		Local $search= _ImageSearch(@ScriptDir&'\img\16\box_dang_nhap.PNG',1,$x,$y,0)
-		If $search=1 Then
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\box_dang_nhap.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
@@ -203,9 +203,9 @@ Func dangnhapnapbang($param1, $x_main, $y_main)
 		If checkError($x_main, $y_main) = True Then
 			Return False
 		EndIf
-		Local $x=0, $y=0
-		Local $search= _ImageSearch(@ScriptDir&'\img\16\dang_nhap_vao_game_Button.PNG',1,$x,$y,0)
-		If $search=1 Then
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\dang_nhap_vao_game_Button.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
@@ -216,9 +216,9 @@ Func dangnhapnapbang($param1, $x_main, $y_main)
 		If checkError($x_main, $y_main) = True Then
 			Return False
 		EndIf
-		Local $x=0, $y=0
-		Local $search= _ImageSearch(@ScriptDir&'\img\16\vao_game_Button.PNG',1,$x,$y,0)
-		If $search=1 Then
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\vao_game_Button.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseClick('main', $x, $y)
 			ExitLoop
 		EndIf
@@ -229,9 +229,9 @@ Func dangnhapnapbang($param1, $x_main, $y_main)
 		If checkError($x_main, $y_main) = True Then
 			Return False
 		EndIf
-		Local $x=0, $y=0
-		Local $search= _ImageSearch(@ScriptDir&'\img\16\napcard.PNG',1,$x,$y,0)
-		If $search=1 Then
+		Local $x = 0, $y = 0
+		Local $search = _ImageSearchArea_(@ScriptDir&'\img\16\napcard.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+		If $search == 1 Then
 			MouseMove($x, $y)
 			MouseClick('main', $x, $y)
 			ExitLoop

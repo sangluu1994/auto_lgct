@@ -1,28 +1,20 @@
-Func getMainPos(ByRef $x_main, ByRef $y_main)
-	While 1
-		Local $x=0, $y=0
-		Local $search= _ImageSearch(@ScriptDir&'\img\0\giaodiengame.PNG',1,$x,$y,0)
-		If $search=1 Then
-			$x_main = $x
-			$y_main = $y
-			Return
-		EndIf
-	WEnd
-EndFunc
-
-Func checkError($x_main, $y_main)
+Func checkError($x_main, $y_main, $lgctPos)
 	Local $x_mainPos = $x_main - 65
 	Local $y_mainPos = $y_main + 95
 	Local $errorResult = False
+
 	Local $x = 0, $y = 0
-	Local $search = _ImageSearch(@ScriptDir&'\img\0\avagame.PNG',1,$x,$y,0)
-	If $search = 1 Then
+	Local $search = _ImageSearchArea_(@ScriptDir&'\img\0\avagame.PNG', 1, $lgctPos[0], $lgctPos[1], $lgctPos[2], $lgctPos[3], $x, $y, 0)
+	If $search == 1 Then
 		$errorResult = True
 	EndIf
+
 	; 217, 630 348, 669
-	$search = _ImageSearchArea_(@ScriptDir&'\img\0\disconnectgame.PNG', 1, $x_mainPos, $y_mainPos, 131, 39, $x, $y, 0)
-	If $search = 1 Then
+	Local $x1 = 0, $y1 = 0
+	Local $search1 = _ImageSearchArea_(@ScriptDir&'\img\0\disconnectgame.PNG', 1, $x_mainPos - 35, $y_mainPos - 5, $x_mainPos + 95, $y_mainPos + 40, $x1, $y1, 0)
+	If $search1 == 1 Then
 		$errorResult = True
 	EndIf
+
 	Return $errorResult
 EndFunc
