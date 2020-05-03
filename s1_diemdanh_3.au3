@@ -48,7 +48,7 @@ $accListLength = Ubound($accList)
 While ($i < $accListLength)
 ; Dang nhap
 dangnhap($accList[$i])
-nhancode("We493978")
+nhancode("H25a703d")
 FileWrite(@ScriptDir&'\logNhapcode.txt',"|"&$i)
 $i = $i + 1
 	While 1
