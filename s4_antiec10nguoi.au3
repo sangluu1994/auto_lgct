@@ -1,4 +1,5 @@
 #include<ImageSearch.au3>
+#include<f0_getInfo.au3>
 #include<f1_dangnhap.au3>
 #include<f10_antiec10nguoi.au3>
 #include <MsgBoxConstants.au3>
@@ -7,7 +8,7 @@
 
 Global $g_bPaused = False
 
-HotKeySet("{PAUSE}", "TogglePause")
+HotKeySet("{F3}", "TogglePause")
 HotKeySet("{ESC}", "Terminate")
 HotKeySet("+!d", "ShowMessage") ; Shift-Alt-d
 
@@ -29,24 +30,53 @@ Func ShowMessage()
 EndFunc   ;==>ShowMessage
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+WinActivate("NoxPlayer")
+WinMove("NoxPlayer", "", Default, Default, 558, 1020)
+Global $lgctPos = WinGetPos("NoxPlayer")
+$lgctPos[2] = $lgctPos[0] + $lgctPos[2] + 60
+$lgctPos[3] = $lgctPos[1] + $lgctPos[3]
+
+Global $x_main = ($lgctPos[0] + $lgctPos[2] + 10) / 2
+Global $y_main = ($lgctPos[1] + 39 + $lgctPos[3]) / 2
+
 Local $accMotiec = "luuhero_sq"
 Local $accList[10] = ["athursitinhkiem", "dzunghdm1", "dzunghdm2", "hongdoban", "bin0game", "bin1game", "mr_yakolam", "hue bamby", "ngaynangdep", "cuongden1986"]
-Local $accList[10] = []
 Local $masoTiec = "247001223"
 
 ; Mo tiec
-;dangnhap($accMotiec)
-;antiec10nguoi(0, $masoTiec)
+While 1
+	Local $dangnhap = dangnhap($accMotiec, $x_main, $y_main, $lgctPos)
+	If $dangnhap == False Then
+		resetGame($lgctPos)
+		ContinueLoop
+	Else
+		antiec10nguoi(0, $masoTiec, $x_main, $y_main, $lgctPos)
+		ExitLoop
+	EndIf
+WEnd
 
 $i = 0
 While ($i < 10)
-; Dang nhap
-dangnhap($accList[$i])
-; An tiec
-antiec10nguoi($i + 1, $masoTiec)
-$i = $i + 1
+	; Dang nhap
+	Local $dangnhap = dangnhap($accList[$i], $x_main, $y_main, $lgctPos)
+	If $dangnhap == False Then
+		resetGame($lgctPos)
+		ContinueLoop
+	Else
+		; An tiec
+		antiec10nguoi($i + 1, $masoTiec, $x_main, $y_main, $lgctPos)
+		$i = $i + 1
+	EndIf
 WEnd
 
-; Mo tiec
-dangnhap($accMotiec)
-antiec10nguoi(11, $masoTiec)
+; Thu tiec
+While 1
+	Local $dangnhap = dangnhap($accMotiec, $x_main, $y_main, $lgctPos)
+	If $dangnhap == False Then
+		resetGame($lgctPos)
+		ContinueLoop
+	Else
+		antiec10nguoi(11, $masoTiec, $x_main, $y_main, $lgctPos)
+		ExitLoop
+	EndIf
+WEnd
